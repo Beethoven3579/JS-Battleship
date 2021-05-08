@@ -8,9 +8,10 @@
 </head>
 <body>
     <div id="board">
+      <div id="messageArea"></div>
         <table>
             <tr>
-            <td id="00"></td> <td id="01"></td> <td id="02"></td> <td id="03"></td>
+            <td id="00" ></td> <td id="01"></td> <td id="02"></td> <td id="03"></td>
             <td id="04"></td> <td id="05"></td> <td id="06"></td>
             </tr>
             <tr>
@@ -19,7 +20,7 @@
             </tr>
             <tr>
             <td id="20"></td> <td id="21"></td> <td id="22"></td> <td id="23"></td>
-            <td id="24"></td> <td id="25"></td> <td id="26"></td>
+            <td id="24"></td> <td id="25" ></td> <td id="26" ></td>
             </tr>
             <tr>
             <td id="30"></td> <td id="31"></td> <td id="32"></td> <td id="33"></td>
@@ -38,6 +39,10 @@
             <td id="64"></td> <td id="65"></td> <td id="66"></td>
             </tr>
             </table>
+        <form>
+            <input type="text" id="guessInput" placeholder="A0">
+            <input type="button" id="fireButton" value="Fire!">
+        </form>    
     </div>
     
     <script src="app.js"></script>
