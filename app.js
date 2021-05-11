@@ -49,6 +49,15 @@ let model = {
             }
         }
         return true;
+    },
+
+    generateShipLocations: function() {
+        let locations;
+        for (let i = 0; i < this.numShips; i++) { 
+        } do {
+            locations = this.generateShip();
+        } while (this.collision(locations));
+        this.ships[i].locations = locations;
     }
 
 };
@@ -90,3 +99,27 @@ function parseGuess(guess) {
     }
     return null;
 }
+
+function init() {
+    let fireButton = document.getElementById('fireButton');
+    fireButton.onclick = handleFireButton;
+    let guessInput = document.getElementById('guessInput');
+    guessInput.onkeypress = handleKeyPress;
+}
+
+function handleFireButton() {
+    let guessInput = document.getElementById('guessInput');
+    let guess = guessInput.value.toUpperCase()
+    controller.processGuess(guess);
+
+    guessInput = "";
+} 
+function handleKeyPress(e) {
+    let fireButton = document.getElementById('fireButton');
+    if (e.keyCode === 13) {
+        fireButton.click();
+        return false;
+    }
+}
+
+window.onload = init;
